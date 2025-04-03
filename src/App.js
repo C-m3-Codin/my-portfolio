@@ -39,8 +39,8 @@ const experiences = [
 const Portfolio = () => {
   const [spotifyTrack, setSpotifyTrack] = useState(null);
   const [exploring, setExploring] = useState([
-    { title: "Event-Driven Microservices", link: "https://example.com/article1" },
-    { title: "Scaling Distributed Systems", link: "https://example.com/article2" }
+    { title: "Event-Driven Microservices", link: "https://www.distributed-systems.net/index.php/books/ds4/" },
+   
   ]);
 
   useEffect(() => {
