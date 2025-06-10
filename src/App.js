@@ -43,21 +43,21 @@ const Portfolio = () => {
    
   ]);
 
-  useEffect(() => {
-    fetch("https://api.spotify.com/v1/me/player/currently-playing", {
-      headers: { Authorization: `Bearer YOUR_SPOTIFY_ACCESS_TOKEN` },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data && data.item) {
-          setSpotifyTrack({
-            name: data.item.name,
-            artist: data.item.artists.map((artist) => artist.name).join(", "),
-          });
-        }
-      })
-      .catch(() => setSpotifyTrack(null));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://api.spotify.com/v1/me/player/currently-playing", {
+  //     headers: { Authorization: `Bearer YOUR_SPOTIFY_ACCESS_TOKEN` },
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data && data.item) {
+  //         setSpotifyTrack({
+  //           name: data.item.name,
+  //           artist: data.item.artists.map((artist) => artist.name).join(", "),
+  //         });
+  //       }
+  //     })
+  //     .catch(() => setSpotifyTrack(null));
+  // }, []);
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-6">
@@ -85,7 +85,7 @@ const Portfolio = () => {
         <h2 className="text-2xl font-semibold mt-8 mb-4">Experience (a.k.a. Debugging in Production)</h2>
         <div className="grid grid-cols-1 gap-6">
           {experiences.map((exp, index) => (
-            <div key={index} className="bg-gray-800 p-4 rounded-2xl shadow-lg">
+            <div key={index} className="bg-gray-800 p-4 rounded-2xl shadow-lg hover:bg-gray-700 transition-colors duration-300">
               <h2 className="text-xl font-semibold mb-2">{exp.company}</h2>
               <p className="text-gray-300">{exp.description}</p>
             </div>
@@ -94,11 +94,7 @@ const Portfolio = () => {
         
         <h2 className="text-2xl font-semibold mt-8 mb-4">Currently Listening To</h2>
         <div className="bg-gray-800 p-4 rounded-2xl shadow-lg">
-          {spotifyTrack ? (
-            <p className="text-gray-300">{spotifyTrack.name} - {spotifyTrack.artist}</p>
-          ) : (
-            <p className="text-gray-500 italic">No music playing... maybe debugging instead?</p>
-          )}
+          <p className="text-gray-300">Currently vibing to some good tunes! 🎶</p>
         </div>
         
         <h2 className="text-2xl font-semibold mt-8 mb-4">Currently Exploring</h2>
@@ -121,7 +117,7 @@ const Portfolio = () => {
         </div>
       </div>
       
-      <footer className="mt-10 text-gray-500 text-sm text-center">
+      <footer className="mt-16 text-gray-500 text-sm text-center">
         <p>404 - Talent Not Found (Just Kidding) 🚀</p>
         <p>I communicate in JSON, but only when deserialized properly.</p>
       </footer>
