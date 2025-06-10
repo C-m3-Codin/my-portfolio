@@ -68,3 +68,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Running with Docker
+
+This application can be easily deployed using Docker.
+
+1.  **Build the Docker image:**
+    From the root directory of the project, run:
+    ```bash
+    docker build -t portfolio-site .
+    ```
+
+2.  **Run the Docker container:**
+    After building the image, run the following command to start the container:
+    ```bash
+    docker run -d -p 80:80 portfolio-site
+    ```
+    This will start the application, and it will be accessible at `http://localhost:80` in your browser.
+
+## Deployment to GitHub Pages
+
+This site is automatically deployed to GitHub Pages whenever changes are pushed to the `main` branch, thanks to a GitHub Actions workflow.
+
+**Live Site URL:** [https://C-m3-Codin.github.io/my-portfolio/](https://C-m3-Codin.github.io/my-portfolio/)
+
+### Manual Deployment (Fallback)
+
+If you need to deploy manually, you can use the following command:
+
+```bash
+npm run deploy
+```
+This command will build the application and push the contents of the `build` directory to the `gh-pages` branch, which is then served by GitHub Pages.
