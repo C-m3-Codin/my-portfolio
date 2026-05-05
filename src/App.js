@@ -38,7 +38,7 @@ const experiences = [
 
 const Portfolio = () => {
   const [spotifyTrack, setSpotifyTrack] = useState(null);
-  const [exploring, setExploring] = useState([
+  const [exploring] = useState([
     { title: "Event-Driven Microservices", link: "https://www.distributed-systems.net/index.php/books/ds4/" },
    
   ]);
